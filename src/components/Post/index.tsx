@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
-import PostComments from "../PostComments";
-import styles from "./Post.module.css";
+import styles from './Post.module.css';
+import PostComments from '../PostComments';
+import { ReactNode } from 'react';
 
 type Props = {
-  children: ReactNode;
-  imageUrl: string;
-};
+    children: ReactNode;
+    imageUrl: string;
+}
 
 const Post = ({ children, imageUrl }: Props) => (
-  <div className={styles.post}>
-    <img className={styles["post-image"]} src={imageUrl} alt="Post" />
-    <p className={styles["post-text"]}> {children} </p>
-    <div data-testid="post-comments-wrapper">
-      <PostComments />
+    <div className={styles.post}>
+        <img className={styles['post-image']} src={imageUrl} alt='imagem' />
+        <p className={styles['post-text']}> {children} </p>
+        <div data-testid="postagens">
+            <PostComments />
+        </div>
     </div>
-  </div>
 );
 
 export default Post;
